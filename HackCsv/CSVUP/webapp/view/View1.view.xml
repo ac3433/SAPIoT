@@ -1,0 +1,44 @@
+<mvc:View xmlns:unified="sap.ui.unified" controllerName="ns.CSVUP.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+					    <sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="layout0">
+					        <sap.ui.layout:content>
+					            <ComboBox xmlns="sap.m" id="cbxDevice" selectionChange="deviceFilterMap" items="{/devices}" tooltip="devices" placeholder="Device">
+					                <items>
+					                    <core:Item xmlns:core="sap.ui.core" key="{name}" text="{name}" id="item0"/>
+					                    </items>
+					                
+					            </ComboBox>
+					            <!--<Label text="SensorType" width="100%" id="label2"/>-->
+					            <!--<ComboBox xmlns="sap.m" id="cbxSensorType" enabled="false" selectionChange="sensorFilterMap" items="{/devices/1/sensors}">-->
+					            <!--    <items>-->
+					            <!--        <core:Item xmlns:core="sap.ui.core" key="{sensorTypeId}" text="{sensorTypeId}" id="item2"/>-->
+					            <!--        </items>-->
+					                
+					            <!--</ComboBox>-->
+					            <!--<Label text="Capability" width="100%" id="label3"/>-->
+					            <!--<ComboBox xmlns="sap.m" id="cbxCapability" enabled="false">-->
+					            <!--    <items>-->
+					            <!--        <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="Item 1 Text" id="item4"/>-->
+					            <!--        <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="Item 2 Text" id="item5"/>-->
+					            <!--        </items>-->
+					                
+					            <!--</ComboBox>-->
+					        </sap.ui.layout:content>
+					    </sap.ui.layout:VerticalLayout>
+					    <sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="layout11">
+					        <sap.ui.layout:content>
+					            <Button xmlns="sap.m" text="Generate" id="btnGenerate" enabled="false" press=".generate"/>
+					            <unified:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/"  tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+		                        <Button text="Upload File" press="handleUploadPress"/>
+					        </sap.ui.layout:content>
+					    </sap.ui.layout:VerticalLayout>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
